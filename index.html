@@ -6,16 +6,22 @@
     <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
 </head>
 <body>
-   <a-assets>
+   
+    <a-scene>
+       <a-assets>
        <img id="ice-texture" src="ice.jpg"/>
    </a-assets>
-    <a-scene>
         <a-box 
-        position="-1 0.5 -3" 
-        color="#4CC3D9" 
-        src="#ice-texture"   
-        shadow></a-box>
-         <a-animation attribute="rotation" repeat="indefinite" to="0 360 0"></a-animation>
+            position="-1 0.5 -3" 
+            color="#4CC3D9" 
+            src="#ice-texture"   
+            shadow>
+            <a-animation attribute="rotation" begin="click" repeat="indefinite" to="0 360 0"></a-animation> 
+            <a-event name="mouseenter" scale="4 1 6"></a-event>   
+        </a-box>
+        <a-camera position="0 1 1">
+            <a-cursor color="red" />
+        </a-camera>  
     </a-scene>
 </body>
 </html>
